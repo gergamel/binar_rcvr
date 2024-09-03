@@ -8,6 +8,8 @@ pip install -r requirements.txt
 
 ## Usage
 
+Copy your .iq data files (np.complex64 raw binary data) into the top folder of your working copy of this repository. The script will find all *.iq files and attempt to process them when you first run the power command.
+
 ### Channel Power Search
 
 Assuming you have the IQ file from the first pass (20240829195734_400k.iq), the first step is to run channelisation and plot decimated channel power, so you can hunt for probably beacons. You can do this by running:
