@@ -336,33 +336,6 @@ if __name__=="__main__":
                 print(f"Wrote: {outfile}")
         exit(0)
 
-
-    """ Best SNR beacons found with quick search through each channel power plot...
-    20240830123521
-    437.850:  13800 -  14000 (envelope looks messed up... maybe too long as well, might not be a Binar beacon)
-    437.700: 405350 - 405750    python binar.py --verbose demod 20240830123521_400k.iq 437.700e6 --offset 405.400 --length 0.30
-    # 437.850: 405800 - 406351    python binar.py --verbose demod 20240830123521_400k.iq 437.850e6 --offset 405.800 --length 0.5
-    437.700: 399600 - 400000    python binar.py --verbose demod 20240830123521_400k.iq 437.700e6 --offset 399.600 --length 0.25
-    437.925: 401150 - 401500    python binar.py --verbose demod 20240830123521_400k.iq 437.925e6 --offset 401.150 --length 0.25
-
-    20240901190108:
-    437.850:   8000 -   8500 (envelope looks messed up...)
-    437.700: 771600 - 772000
-    437.925: 772250 - 772700
-    437.850: 774333 - 774650 (envelope looks messed up...)
-
-    20240902100932:
-    437.925: 387100 - 387450
-    437.700: 387380 - 387700
-    Looks like clipping at, for example, 24800 - 248250
-
-    20240902114717:
-    437.700: 333500-334000
-    437.925: 334750-335250
-    437.700: 339100-339450
-    437.700: 344450-345000
-    437.925: 345250-345750
-    """
     if pargs.cmd=="demod":
         sf = SignalFile.frompath(Path(pargs.srcfile), verbose=pargs.verbose)
         gfsk = GFSK(samplerate=sf.samplerate)
